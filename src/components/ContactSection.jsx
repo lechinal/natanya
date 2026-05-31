@@ -6,7 +6,7 @@ const INFO_ROWS = [
   ["📞", "Telefon", "+40 725 680 000"],
   ["⏰", "Program", "Luni–Duminică: 10:00 – 23:00"],
   ["📧", "Email", "newnatanya@yahoo.com"],
-  ["📍", "Adresă", "Bd. 1 Decembrie 1918, Alba Iulia"],
+  ["📍", "Adresă", "Bd. 1 Decembrie 1918, 51008 Alba Iulia"],
 ];
 
 const FORM_FIELDS = [
@@ -21,7 +21,9 @@ export default function ContactSection({ isMobile, pad }) {
   return (
     <FadeIn id="contact" style={{ padding: pad }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <header style={{ textAlign: "center", marginBottom: isMobile ? 28 : 48 }}>
+        <header
+          style={{ textAlign: "center", marginBottom: isMobile ? 28 : 48 }}
+        >
           <p
             style={{
               color: C.gold,
@@ -56,7 +58,9 @@ export default function ContactSection({ isMobile, pad }) {
           <address style={{ fontStyle: "normal" }}>
             {INFO_ROWS.map(([icon, label, val]) => (
               <div key={label} className="info-row">
-                <div className="info-icon" aria-hidden="true">{icon}</div>
+                <div className="info-icon" aria-hidden="true">
+                  {icon}
+                </div>
                 <div>
                   <div
                     style={{
@@ -84,7 +88,7 @@ export default function ContactSection({ isMobile, pad }) {
             >
               <iframe
                 title="Locație Natanya pe Google Maps"
-                src="https://maps.google.com/maps?q=Bulevardul+1+Decembrie+1918,+Alba+Iulia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=46.0697237,23.5643903&t=&z=17&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="220"
                 style={{
@@ -118,9 +122,13 @@ export default function ContactSection({ isMobile, pad }) {
               role="status"
               aria-live="polite"
             >
-              <div style={{ fontSize: 56 }} aria-hidden="true">✅</div>
+              <div style={{ fontSize: 56 }} aria-hidden="true">
+                ✅
+              </div>
               <h3 style={{ fontSize: 20, fontWeight: 700 }}>Mesaj trimis!</h3>
-              <p style={{ color: C.muted, fontSize: 14 }}>Te contactăm în scurt timp.</p>
+              <p style={{ color: C.muted, fontSize: 14 }}>
+                Te contactăm în scurt timp.
+              </p>
               <button className="btn-gold" onClick={() => setFormSent(false)}>
                 Trimite alt mesaj
               </button>
@@ -133,7 +141,10 @@ export default function ContactSection({ isMobile, pad }) {
                 padding: isMobile ? 20 : 32,
                 border: `1px solid ${C.border}`,
               }}
-              onSubmit={(e) => { e.preventDefault(); setFormSent(true); }}
+              onSubmit={(e) => {
+                e.preventDefault();
+                setFormSent(true);
+              }}
               aria-label="Formular de contact Natanya"
             >
               <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>
@@ -161,7 +172,9 @@ export default function ContactSection({ isMobile, pad }) {
                     placeholder={ph}
                     value={form[field]}
                     required
-                    onChange={(e) => setForm((f) => ({ ...f, [field]: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, [field]: e.target.value }))
+                    }
                     style={{
                       width: "100%",
                       background: C.bg,
@@ -196,7 +209,9 @@ export default function ContactSection({ isMobile, pad }) {
                   rows={4}
                   value={form.mesaj}
                   required
-                  onChange={(e) => setForm((f) => ({ ...f, mesaj: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, mesaj: e.target.value }))
+                  }
                   style={{
                     width: "100%",
                     background: C.bg,
