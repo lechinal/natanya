@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import logo from "./assets/logo/natanya_transparent_200.png";
+import logo from "./assets/logo/natanya_transparent_512.png";
 
 const NAV_LINKS = ["Acasă", "Despre noi", "Meniu", "Galerie", "Contact"];
 
@@ -1180,7 +1180,7 @@ export default function App() {
               {[
                 ["📞", "Telefon", "+40 725 680 000"],
                 ["⏰", "Program", "Luni–Duminică: 10:00 – 23:00"],
-                ["📧", "Email", "contact@natanya.ro"],
+                ["📧", "Email", "newnatanya@yahoo.com"],
                 ["📍", "Adresă", "Adresa restaurantului"],
               ].map(([icon, label, val]) => (
                 <div key={label} className="info-row">
