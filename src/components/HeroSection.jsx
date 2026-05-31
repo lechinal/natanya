@@ -1,4 +1,5 @@
 import shaormaImg from "../assets/img/shaorma-img-noBG.png";
+import shaormaWebp from "../assets/img/shaorma-img-noBG.webp";
 import { C } from "../constants";
 
 export default function HeroSection({ isMobile, onScrollTo }) {
@@ -47,20 +48,22 @@ export default function HeroSection({ isMobile, onScrollTo }) {
       >
         {isMobile ? (
           <div style={{ textAlign: "center" }}>
-            <img
-              src={shaormaImg}
-              alt="Shaorma Natanya – preparată proaspăt"
-              className="hero-img"
-              style={{
-                width: "85%",
-                maxWidth: 300,
-                display: "block",
-                margin: "0 auto 20px",
-
-                // border: `2px solid ${C.gold}` - pentru debuging, să văd exact conturul imaginii
-                filter: "drop-shadow(0 0 40px rgba(139,26,26,0.5))",
-              }}
-            />
+            <picture>
+              <source srcSet={shaormaWebp} type="image/webp" />
+              <img
+                src={shaormaImg}
+                alt="Shaorma Natanya – preparată proaspăt"
+                fetchPriority="high"
+                className="hero-img"
+                style={{
+                  width: "85%",
+                  maxWidth: 300,
+                  display: "block",
+                  margin: "0 auto 20px",
+                  filter: "drop-shadow(0 0 40px rgba(139,26,26,0.5))",
+                }}
+              />
+            </picture>
             <div
               style={{
                 display: "inline-block",
@@ -242,16 +245,20 @@ export default function HeroSection({ isMobile, onScrollTo }) {
               </div>
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img
-                src={shaormaImg}
-                alt="Shaorma Natanya – preparată proaspăt din ingrediente de calitate"
-                className="hero-img"
-                style={{
-                  width: "100%",
-                  maxWidth: 480,
-                  filter: "drop-shadow(0 0 60px rgba(139,26,26,0.4))",
-                }}
-              />
+              <picture>
+                <source srcSet={shaormaWebp} type="image/webp" />
+                <img
+                  src={shaormaImg}
+                  alt="Shaorma Natanya – preparată proaspăt din ingrediente de calitate"
+                  fetchPriority="high"
+                  className="hero-img"
+                  style={{
+                    width: "100%",
+                    maxWidth: 480,
+                    filter: "drop-shadow(0 0 60px rgba(139,26,26,0.4))",
+                  }}
+                />
+              </picture>
             </div>
           </div>
         )}

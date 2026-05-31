@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/logo/natanya_transparent_512.png";
+import logoWebp from "../assets/logo/natanya_transparent_512.webp";
 import { NAV_LINKS, C } from "../constants";
 
 export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
@@ -37,13 +38,17 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
       >
         {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <img
-            src={logo}
-            alt="Logo Natanya"
-            width={48}
-            height={48}
-            style={{ objectFit: "contain", flexShrink: 0 }}
-          />
+          <picture>
+            <source srcSet={logoWebp} type="image/webp" />
+            <img
+              src={logo}
+              alt="Logo Natanya"
+              width={48}
+              height={48}
+              fetchPriority="high"
+              style={{ objectFit: "contain", flexShrink: 0 }}
+            />
+          </picture>
           <div>
             <div
               style={{

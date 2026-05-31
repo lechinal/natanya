@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { useIsMobile } from "./hooks/useIsMobile";
 import { C } from "./constants";
 import GlobalStyles from "./components/GlobalStyles";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import MenuSection from "./components/MenuSection";
-import GallerySection from "./components/GallerySection";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
-import ChatWidget from "./components/ChatWidget";
+
+const AboutSection = lazy(() => import("./components/AboutSection"));
+const MenuSection = lazy(() => import("./components/MenuSection"));
+const GallerySection = lazy(() => import("./components/GallerySection"));
+const ContactSection = lazy(() => import("./components/ContactSection"));
+const Footer = lazy(() => import("./components/Footer"));
+const ChatWidget = lazy(() => import("./components/ChatWidget"));
 
 const SECTION_MAP = {
   Acasă: "home",
@@ -51,12 +52,14 @@ export default function App() {
       <GlobalStyles />
       <Navbar active={active} onScrollTo={scrollTo} onCall={handleCall} isMobile={isMobile} />
       <HeroSection isMobile={isMobile} onScrollTo={scrollTo} />
-      <AboutSection isMobile={isMobile} onCall={handleCall} pad={pad} />
-      <MenuSection isMobile={isMobile} pad={pad} />
-      <GallerySection isMobile={isMobile} pad={pad} />
-      <ContactSection isMobile={isMobile} pad={pad} />
-      <Footer isMobile={isMobile} />
-      <ChatWidget isMobile={isMobile} />
+      <Suspense fallback={null}>
+        <AboutSection isMobile={isMobile} onCall={handleCall} pad={pad} />
+        <MenuSection isMobile={isMobile} pad={pad} />
+        <GallerySection isMobile={isMobile} pad={pad} />
+        <ContactSection isMobile={isMobile} pad={pad} />
+        <Footer isMobile={isMobile} />
+        <ChatWidget isMobile={isMobile} />
+      </Suspense>
     </div>
   );
 }
