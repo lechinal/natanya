@@ -6,7 +6,7 @@ const INFO_ROWS = [
   ["📞", "Telefon", "+40 725 680 000"],
   ["⏰", "Program", "Luni–Duminică: 10:00 – 23:00"],
   ["📧", "Email", "newnatanya@yahoo.com"],
-  ["📍", "Adresă", "Adresa restaurantului"],
+  ["📍", "Adresă", "Bd. 1 Decembrie 1918, Alba Iulia"],
 ];
 
 const FORM_FIELDS = [
@@ -78,19 +78,24 @@ export default function ContactSection({ isMobile, pad }) {
               style={{
                 marginTop: 16,
                 borderRadius: 16,
-                height: 160,
-                background: `linear-gradient(135deg, ${C.card}, #1a0800)`,
+                overflow: "hidden",
                 border: `1px solid ${C.border}`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: C.muted,
-                fontSize: 14,
-                gap: 8,
               }}
-              aria-label="Hartă Google Maps - în curând"
             >
-              🗺️ Google Maps integrat aici
+              <iframe
+                title="Locație Natanya pe Google Maps"
+                src="https://maps.google.com/maps?q=Bulevardul+1+Decembrie+1918,+Alba+Iulia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="220"
+                style={{
+                  display: "block",
+                  border: 0,
+                  filter: "invert(90%) hue-rotate(180deg) saturate(0.8)",
+                }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </address>
 
