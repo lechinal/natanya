@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://natanya.ro/sitemap.xml

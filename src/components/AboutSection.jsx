@@ -2,7 +2,11 @@ import FadeIn from "./FadeIn";
 import { C } from "../constants";
 
 const CARDS_DESKTOP = [
-  ["🥙", "Lipie proaspătă zilnic", "Proaspătă la fiecare comandă, fără excepție"],
+  [
+    "🥙",
+    "Lipie proaspătă zilnic",
+    "Proaspătă la fiecare comandă, fără excepție",
+  ],
   ["🥩", "Carne selectată", "Furnizori locali de încredere"],
   ["🥬", "Legume proaspete", "Selectate zilnic pentru calitate maximă"],
   ["🫙", "Sosuri proprii", "Rețete originale Natanya"],
@@ -55,13 +59,28 @@ export default function AboutSection({ isMobile, onCall, pad }) {
             >
               e în fiecare lipie
             </h2>
-            <p style={{ color: C.muted, lineHeight: 1.8, fontSize: 15, marginBottom: 14 }}>
-              Natanya înseamnă mai mult decât mâncare fast — înseamnă rețete autentice,
-              lipie pregătită la comandă și ingrediente alese cu grijă.
+            <p
+              style={{
+                color: C.muted,
+                lineHeight: 1.8,
+                fontSize: 15,
+                marginBottom: 14,
+              }}
+            >
+              Natanya înseamnă mai mult decât mâncare fast — înseamnă rețete
+              autentice, lipie pregătită la comandă și ingrediente alese cu
+              grijă.
             </p>
-            <p style={{ color: C.muted, lineHeight: 1.8, fontSize: 15, marginBottom: 24 }}>
-              Fiecare shaorma, fiecare piadină, fiecare kebab e asamblat la comandă.
-              Gustul pe care îl cunoști, calitatea pe care o meriți.
+            <p
+              style={{
+                color: C.muted,
+                lineHeight: 1.8,
+                fontSize: 15,
+                marginBottom: 24,
+              }}
+            >
+              Fiecare shaorma, fiecare piadină, fiecare kebab e asamblat la
+              comandă. Gustul pe care îl cunoști, calitatea pe care o meriți.
             </p>
             <div
               style={{
@@ -75,7 +94,12 @@ export default function AboutSection({ isMobile, onCall, pad }) {
                 <div
                   key={item}
                   className="about-card"
-                  style={{ textAlign: "center", fontSize: 13, fontWeight: 600, lineHeight: 1.6 }}
+                  style={{
+                    textAlign: "center",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    lineHeight: 1.6,
+                  }}
                 >
                   {item}
                 </div>
@@ -134,13 +158,28 @@ export default function AboutSection({ isMobile, onCall, pad }) {
               >
                 e în fiecare lipie
               </h2>
-              <p style={{ color: C.muted, lineHeight: 1.8, fontSize: 16, marginBottom: 16 }}>
-                Natanya înseamnă mai mult decât mâncare fast — înseamnă rețete autentice,
-                lipie pregătită la comandă și ingrediente alese cu grijă.
+              <p
+                style={{
+                  color: C.muted,
+                  lineHeight: 1.8,
+                  fontSize: 16,
+                  marginBottom: 16,
+                }}
+              >
+                Natanya înseamnă mai mult decât mâncare fast — înseamnă rețete
+                autentice, lipie pregătită la comandă și ingrediente alese cu
+                grijă.
               </p>
-              <p style={{ color: C.muted, lineHeight: 1.8, fontSize: 16, marginBottom: 32 }}>
-                Fiecare shaorma, fiecare piadină, fiecare kebab e asamblat la comandă.
-                Gustul pe care îl cunoști, calitatea pe care o meriți.
+              <p
+                style={{
+                  color: C.muted,
+                  lineHeight: 1.8,
+                  fontSize: 16,
+                  marginBottom: 32,
+                }}
+              >
+                Fiecare shaorma, fiecare piadină, fiecare kebab e asamblat la
+                comandă. Gustul pe care îl cunoști, calitatea pe care o meriți.
               </p>
               <button
                 className="btn-red"
@@ -150,12 +189,26 @@ export default function AboutSection({ isMobile, onCall, pad }) {
                 📞 +40 725 680 000
               </button>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 14,
+              }}
+            >
               {CARDS_DESKTOP.map(([emoji, titlu, desc]) => (
                 <div key={titlu} className="about-card">
                   <div style={{ fontSize: 32, marginBottom: 10 }}>{emoji}</div>
-                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{titlu}</div>
-                  <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.6 }}>{desc}</div>
+                  <div
+                    style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}
+                  >
+                    {titlu}
+                  </div>
+                  <div
+                    style={{ fontSize: 12, color: C.muted, lineHeight: 1.6 }}
+                  >
+                    {desc}
+                  </div>
                 </div>
               ))}
             </div>
