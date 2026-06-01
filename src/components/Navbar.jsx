@@ -31,7 +31,7 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
         style={{
           maxWidth: 1100,
           margin: "0 auto",
-          height: 62,
+          height: isMobile ? 62 : 80,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -39,14 +39,14 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
         }}
       >
         {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <picture>
             <source srcSet={logoWebp} type="image/webp" />
             <img
               src={logo}
               alt="Logo Natanya"
-              width={48}
-              height={48}
+              width={isMobile ? 46 : 68}
+              height={isMobile ? 46 : 68}
               fetchPriority="high"
               style={{ objectFit: "contain", flexShrink: 0 }}
             />
