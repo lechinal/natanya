@@ -10,20 +10,47 @@ const INFO_ROWS = [
 ];
 
 const FORM_FIELDS = [
-  ["Nume", "text", "nume", "Numele tău"],
+  ["Nume", "text", "name", "Numele tău"],
   ["Email", "email", "email", "email@exemplu.ro"],
 ];
 
 export default function ContactSection({ isMobile, pad }) {
-  const [form, setForm] = useState({ nume: "", email: "", mesaj: "" });
+  const [sending, setSending] = useState(false);
   const [formSent, setFormSent] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setError(null);
+
+    const data = new FormData(e.target);
+    data.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setFormSent(true);
+        e.target.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      setError("Mesajul nu a putut fi trimis. Încearcă din nou sau sună-ne direct.");
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <FadeIn id="contact" style={{ padding: pad }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <header
-          style={{ textAlign: "center", marginBottom: isMobile ? 28 : 48 }}
-        >
+        <header style={{ textAlign: "center", marginBottom: isMobile ? 28 : 48 }}>
           <p
             style={{
               color: C.gold,
@@ -54,13 +81,11 @@ export default function ContactSection({ isMobile, pad }) {
             gap: isMobile ? 32 : 60,
           }}
         >
-          {/* Contact info */}
+          {/* Contact info + harta */}
           <address style={{ fontStyle: "normal" }}>
             {INFO_ROWS.map(([icon, label, val]) => (
               <div key={label} className="info-row">
-                <div className="info-icon" aria-hidden="true">
-                  {icon}
-                </div>
+                <div className="info-icon" aria-hidden="true">{icon}</div>
                 <div>
                   <div
                     style={{
@@ -103,7 +128,7 @@ export default function ContactSection({ isMobile, pad }) {
             </div>
           </address>
 
-          {/* Contact form */}
+          {/* Formular contact */}
           {formSent ? (
             <div
               style={{
@@ -122,9 +147,7 @@ export default function ContactSection({ isMobile, pad }) {
               role="status"
               aria-live="polite"
             >
-              <div style={{ fontSize: 56 }} aria-hidden="true">
-                ✅
-              </div>
+              <div style={{ fontSize: 56 }} aria-hidden="true">✅</div>
               <h3 style={{ fontSize: 20, fontWeight: 700 }}>Mesaj trimis!</h3>
               <p style={{ color: C.muted, fontSize: 14 }}>
                 Te contactăm în scurt timp.
@@ -141,19 +164,17 @@ export default function ContactSection({ isMobile, pad }) {
                 padding: isMobile ? 20 : 32,
                 border: `1px solid ${C.border}`,
               }}
-              onSubmit={(e) => {
-                e.preventDefault();
-                setFormSent(true);
-              }}
+              onSubmit={handleSubmit}
               aria-label="Formular de contact Natanya"
             >
               <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>
                 Trimite un mesaj
               </h3>
-              {FORM_FIELDS.map(([label, type, field, ph]) => (
-                <div key={field} style={{ marginBottom: 14 }}>
+
+              {FORM_FIELDS.map(([label, type, name, ph]) => (
+                <div key={name} style={{ marginBottom: 14 }}>
                   <label
-                    htmlFor={`contact-${field}`}
+                    htmlFor={`contact-${name}`}
                     style={{
                       fontSize: 11,
                       color: C.muted,
@@ -167,14 +188,11 @@ export default function ContactSection({ isMobile, pad }) {
                     {label}
                   </label>
                   <input
-                    id={`contact-${field}`}
+                    id={`contact-${name}`}
                     type={type}
+                    name={name}
                     placeholder={ph}
-                    value={form[field]}
                     required
-                    onChange={(e) =>
-                      setForm((f) => ({ ...f, [field]: e.target.value }))
-                    }
                     style={{
                       width: "100%",
                       background: C.bg,
@@ -188,9 +206,10 @@ export default function ContactSection({ isMobile, pad }) {
                   />
                 </div>
               ))}
+
               <div style={{ marginBottom: 18 }}>
                 <label
-                  htmlFor="contact-mesaj"
+                  htmlFor="contact-message"
                   style={{
                     fontSize: 11,
                     color: C.muted,
@@ -204,14 +223,11 @@ export default function ContactSection({ isMobile, pad }) {
                   Mesaj
                 </label>
                 <textarea
-                  id="contact-mesaj"
+                  id="contact-message"
+                  name="message"
                   placeholder="Scrie mesajul tău..."
                   rows={4}
-                  value={form.mesaj}
                   required
-                  onChange={(e) =>
-                    setForm((f) => ({ ...f, mesaj: e.target.value }))
-                  }
                   style={{
                     width: "100%",
                     background: C.bg,
@@ -225,12 +241,29 @@ export default function ContactSection({ isMobile, pad }) {
                   }}
                 />
               </div>
+
+              {error && (
+                <p
+                  style={{ color: "#e05555", fontSize: 13, marginBottom: 12, lineHeight: 1.5 }}
+                  role="alert"
+                >
+                  {error}
+                </p>
+              )}
+
               <button
                 type="submit"
                 className="btn-red"
-                style={{ width: "100%", padding: 15, fontSize: 16 }}
+                disabled={sending}
+                style={{
+                  width: "100%",
+                  padding: 15,
+                  fontSize: 16,
+                  opacity: sending ? 0.7 : 1,
+                  cursor: sending ? "not-allowed" : "pointer",
+                }}
               >
-                Trimite mesajul 🚀
+                {sending ? "Se trimite..." : "Trimite mesajul 🚀"}
               </button>
             </form>
           )}
