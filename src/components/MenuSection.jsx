@@ -23,7 +23,7 @@ export default function MenuSection({ isMobile, pad }) {
           </p>
           <h2
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(26px,6vw,42px)",
             }}
           >

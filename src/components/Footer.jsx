@@ -25,7 +25,7 @@ export default function Footer({ isMobile }) {
           <div>
             <div
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 700,
                 fontSize: 20,
                 color: C.red,

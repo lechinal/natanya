@@ -81,7 +81,7 @@ export default function HeroSection({ isMobile, onScrollTo }) {
             </div>
             <h1
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(32px,9vw,46px)",
                 lineHeight: 1.15,
                 marginBottom: 8,
@@ -91,7 +91,7 @@ export default function HeroSection({ isMobile, onScrollTo }) {
             </h1>
             <p
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(32px,9vw,46px)",
                 lineHeight: 1.15,
                 marginBottom: 20,
@@ -180,7 +180,7 @@ export default function HeroSection({ isMobile, onScrollTo }) {
               </div>
               <h1
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "clamp(40px,5vw,62px)",
                   lineHeight: 1.1,
                   marginBottom: 8,
@@ -190,7 +190,7 @@ export default function HeroSection({ isMobile, onScrollTo }) {
               </h1>
               <p
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "clamp(40px,5vw,62px)",
                   lineHeight: 1.1,
                   marginBottom: 22,

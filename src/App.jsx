@@ -44,7 +44,7 @@ export default function App() {
       style={{
         background: C.bg,
         color: C.text,
-        fontFamily: "'Outfit', sans-serif",
+        fontFamily: "'DM Sans', sans-serif",
         minHeight: "100vh",
         overflowX: "hidden",
       }}

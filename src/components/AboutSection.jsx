@@ -35,7 +35,7 @@ export default function AboutSection({ isMobile, onCall, pad }) {
             </p>
             <h2
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(26px,7vw,38px)",
                 lineHeight: 1.2,
                 marginBottom: 4,
@@ -45,7 +45,7 @@ export default function AboutSection({ isMobile, onCall, pad }) {
             </h2>
             <h2
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(26px,7vw,38px)",
                 lineHeight: 1.2,
                 color: C.gold,
@@ -114,7 +114,7 @@ export default function AboutSection({ isMobile, onCall, pad }) {
               </p>
               <h2
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "clamp(28px,3.5vw,44px)",
                   lineHeight: 1.2,
                   marginBottom: 4,
@@ -124,7 +124,7 @@ export default function AboutSection({ isMobile, onCall, pad }) {
               </h2>
               <h2
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Cormorant Garamond', serif",
                   fontSize: "clamp(28px,3.5vw,44px)",
                   lineHeight: 1.2,
                   color: C.gold,
