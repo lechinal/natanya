@@ -51,15 +51,32 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
               style={{ objectFit: "contain", flexShrink: 0 }}
             />
           </picture>
-          <picture>
-            <source srcSet={logoScrisWebp} type="image/webp" />
-            <img
-              src={logoScris}
-              alt="Natanya"
-              fetchPriority="high"
-              style={{ height: 36, width: "auto", objectFit: "contain" }}
-            />
-          </picture>
+          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <picture>
+              <source srcSet={logoScrisWebp} type="image/webp" />
+              <img
+                src={logoScris}
+                alt="Natanya"
+                fetchPriority="high"
+                style={{
+                  height: 36,
+                  width: "auto",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </picture>
+            <div
+              style={{
+                fontSize: 12,
+                color: C.beige,
+                letterSpacing: 0.5,
+                fontStyle: "italic",
+              }}
+            >
+              Gustul începe cu lipia noastră proaspătă
+            </div>
+          </div>
         </div>
 
         {/* Desktop nav */}

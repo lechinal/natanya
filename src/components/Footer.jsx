@@ -1,3 +1,5 @@
+import logoScris from "../assets/logo/logo-scris.png";
+import logoScrisWebp from "../assets/logo/logo-scris.webp";
 import { C } from "../constants";
 
 const SOCIAL = ["Facebook", "Instagram", "TikTok"];
@@ -23,22 +25,24 @@ export default function Footer({ isMobile }) {
           }}
         >
           <div>
+            <picture>
+              <source srcSet={logoScrisWebp} type="image/webp" />
+              <img
+                src={logoScris}
+                alt="Natanya"
+                style={{
+                  height: 32,
+                  width: "auto",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </picture>
             <div
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 700,
-                fontSize: 20,
-                color: C.red,
-                letterSpacing: 2,
-              }}
-            >
-              NATANYA
-            </div>
-            <div
-              style={{
-                fontSize: 11,
+                fontSize: 12,
                 color: C.muted,
-                marginTop: 2,
+                marginTop: 6,
                 fontStyle: "italic",
               }}
             >
