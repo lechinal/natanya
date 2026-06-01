@@ -1,6 +1,8 @@
 import { useState } from "react";
 import logo from "../assets/logo/natanya_transparent_512.png";
 import logoWebp from "../assets/logo/natanya_transparent_512.webp";
+import logoScris from "../assets/logo/logo-scris.png";
+import logoScrisWebp from "../assets/logo/logo-scris.webp";
 import { NAV_LINKS, C } from "../constants";
 
 export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
@@ -49,30 +51,15 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
               style={{ objectFit: "contain", flexShrink: 0 }}
             />
           </picture>
-          <div>
-            <div
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 700,
-                fontSize: 20,
-                color: C.red,
-                letterSpacing: 2,
-                lineHeight: 1,
-              }}
-            >
-              NATANYA
-            </div>
-            <div
-              style={{
-                fontSize: 9,
-                color: C.beige,
-                letterSpacing: 0.5,
-                fontStyle: "italic",
-              }}
-            >
-              Gustul începe cu lipia noastră proaspătă
-            </div>
-          </div>
+          <picture>
+            <source srcSet={logoScrisWebp} type="image/webp" />
+            <img
+              src={logoScris}
+              alt="Natanya"
+              fetchPriority="high"
+              style={{ height: 36, width: "auto", objectFit: "contain" }}
+            />
+          </picture>
         </div>
 
         {/* Desktop nav */}
