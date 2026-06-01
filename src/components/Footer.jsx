@@ -1,3 +1,5 @@
+import logo from "../assets/logo/natanya_transparent_512.png";
+import logoWebp from "../assets/logo/natanya_transparent_512.webp";
 import logoScris from "../assets/logo/logo-scris.png";
 import logoScrisWebp from "../assets/logo/logo-scris.webp";
 import { C } from "../constants";
@@ -24,29 +26,40 @@ export default function Footer({ isMobile }) {
             marginBottom: 16,
           }}
         >
-          <div>
+          <div
+            style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}
+            onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+            role="button"
+            aria-label="Mergi la pagina principală"
+          >
             <picture>
-              <source srcSet={logoScrisWebp} type="image/webp" />
+              <source srcSet={logoWebp} type="image/webp" />
               <img
-                src={logoScris}
-                alt="Natanya"
-                style={{
-                  height: 32,
-                  width: "auto",
-                  objectFit: "contain",
-                  display: "block",
-                }}
+                src={logo}
+                alt="Logo Natanya"
+                width={52}
+                height={52}
+                style={{ objectFit: "contain", flexShrink: 0 }}
               />
             </picture>
-            <div
-              style={{
-                fontSize: 12,
-                color: C.muted,
-                marginTop: 6,
-                fontStyle: "italic",
-              }}
-            >
-              Gustul începe cu lipia noastră proaspătă
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              <picture>
+                <source srcSet={logoScrisWebp} type="image/webp" />
+                <img
+                  src={logoScris}
+                  alt="Natanya"
+                  style={{ height: 28, width: "auto", objectFit: "contain", display: "block" }}
+                />
+              </picture>
+              <div
+                style={{
+                  fontSize: 11,
+                  color: C.muted,
+                  fontStyle: "italic",
+                }}
+              >
+                Gustul începe cu lipia noastră proaspătă
+              </div>
             </div>
           </div>
           <nav aria-label="Rețele sociale">

@@ -39,7 +39,12 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
         }}
       >
         {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div
+          style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}
+          onClick={() => handleNav("Acasă")}
+          role="button"
+          aria-label="Mergi la pagina principală"
+        >
           <picture>
             <source srcSet={logoWebp} type="image/webp" />
             <img
