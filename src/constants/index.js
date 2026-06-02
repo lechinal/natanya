@@ -1,5 +1,7 @@
 export const NAV_LINKS = ["Acasă", "Despre noi", "Meniu", "Galerie", "Contact"];
 
+export const GOOGLE_RATING = 4.4;
+
 export const MENIU = [
   {
     categorie: "SIGNATURE NATANYA",

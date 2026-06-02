@@ -1,18 +1,19 @@
 import shaormaImg from "../assets/img/shaorma-img-noBG.png";
 import shaormaWebp from "../assets/img/shaorma-img-noBG.webp";
-import { C } from "../constants";
+import { C, GOOGLE_RATING } from "../constants";
+import StarRating from "./StarRating";
 
 export default function HeroSection({ isMobile, onScrollTo }) {
   const stats = isMobile
     ? [
         ["100%", "Proaspăt zilnic"],
-        ["★★★★★", "Google"],
-        ["+40 725", "680 000"],
+        ["google", "Google"],
+        ["7/7", "Zile/săptămână"],
       ]
     : [
         ["100%", "Proaspăt zilnic"],
-        ["★★★★★", "Google Reviews"],
-        ["+40 725 680 000", "Telefon"],
+        ["google", "Google Reviews"],
+        ["7/7", "Zile pe săptămână"],
       ];
 
   return (
@@ -143,12 +144,14 @@ export default function HeroSection({ isMobile, onScrollTo }) {
             <div style={{ display: "flex", justifyContent: "center", gap: 36 }}>
               {stats.map(([v, l]) => (
                 <div key={l} style={{ textAlign: "center" }}>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: C.gold }}>
-                    {v}
-                  </div>
-                  <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>
-                    {l}
-                  </div>
+                  {v === "google" ? (
+                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 22 }}>
+                      <StarRating rating={GOOGLE_RATING} size={13} />
+                    </div>
+                  ) : (
+                    <div style={{ fontSize: 16, fontWeight: 700, color: C.gold }}>{v}</div>
+                  )}
+                  <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>{l}</div>
                 </div>
               ))}
             </div>
@@ -232,14 +235,14 @@ export default function HeroSection({ isMobile, onScrollTo }) {
               <div style={{ display: "flex", gap: 40 }}>
                 {stats.map(([v, l]) => (
                   <div key={l} style={{ textAlign: "center" }}>
-                    <div
-                      style={{ fontSize: 17, fontWeight: 700, color: C.gold }}
-                    >
-                      {v}
-                    </div>
-                    <div style={{ fontSize: 12, color: C.muted, marginTop: 3 }}>
-                      {l}
-                    </div>
+                    {v === "google" ? (
+                      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 24 }}>
+                        <StarRating rating={GOOGLE_RATING} size={16} />
+                      </div>
+                    ) : (
+                      <div style={{ fontSize: 17, fontWeight: 700, color: C.gold }}>{v}</div>
+                    )}
+                    <div style={{ fontSize: 12, color: C.muted, marginTop: 3 }}>{l}</div>
                   </div>
                 ))}
               </div>
