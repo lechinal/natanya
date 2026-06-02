@@ -40,7 +40,12 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
       >
         {/* Logo */}
         <div
-          style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            cursor: "pointer",
+          }}
           onClick={() => handleNav("Acasă")}
           role="button"
           aria-label="Mergi la pagina principală"
@@ -77,6 +82,7 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
                 color: C.beige,
                 letterSpacing: 0.5,
                 fontStyle: "italic",
+                display: isMobile ? "none" : "block",
               }}
             >
               Gustul începe cu lipia noastră proaspătă

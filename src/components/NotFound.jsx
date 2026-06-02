@@ -18,7 +18,11 @@ export default function NotFound({ onGoHome }) {
         gap: 24,
       }}
     >
-      <img src={logo} alt="Natanya" style={{ width: 90, height: 90, objectFit: "contain" }} />
+      <img
+        src={logo}
+        alt="Natanya"
+        style={{ width: 90, height: 90, objectFit: "contain" }}
+      />
       <div
         style={{
           fontSize: "clamp(80px,15vw,140px)",
@@ -39,8 +43,11 @@ export default function NotFound({ onGoHome }) {
       >
         Pagina nu a fost găsită
       </h1>
-      <p style={{ color: C.muted, fontSize: 16, maxWidth: 400, lineHeight: 1.7 }}>
-        Se pare că pagina pe care o cauți nu există. Poate ai ajuns aici din greșeală?
+      <p
+        style={{ color: C.muted, fontSize: 16, maxWidth: 400, lineHeight: 1.7 }}
+      >
+        Se pare că pagina pe care o cauți nu există. Poate ai ajuns aici din
+        greșeală?
       </p>
       <button
         className="btn-red"
