@@ -23,7 +23,7 @@ export default function HeroSection({ isMobile, onScrollTo }) {
         minHeight: "100svh",
         display: "flex",
         alignItems: "center",
-        paddingTop: isMobile ? 62 : 80,
+        paddingTop: isMobile ? 70 : 80,
         position: "relative",
         overflow: "hidden",
       }}

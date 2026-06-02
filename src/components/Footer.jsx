@@ -37,8 +37,8 @@ export default function Footer({ isMobile }) {
               <img
                 src={logo}
                 alt="Logo Natanya"
-                width={52}
-                height={52}
+                width={isMobile ? 40 : 68}
+                height={isMobile ? 40 : 68}
                 style={{ objectFit: "contain", flexShrink: 0 }}
               />
             </picture>
@@ -48,14 +48,16 @@ export default function Footer({ isMobile }) {
                 <img
                   src={logoScris}
                   alt="Natanya"
-                  style={{ height: 28, width: "auto", objectFit: "contain", display: "block" }}
+                  style={{ height: isMobile ? 26 : 36, width: "auto", objectFit: "contain", display: "block" }}
                 />
               </picture>
               <div
                 style={{
-                  fontSize: 11,
-                  color: C.muted,
+                  fontSize: isMobile ? 9 : 12,
+                  color: C.beige,
+                  letterSpacing: 0.5,
                   fontStyle: "italic",
+                  whiteSpace: "nowrap",
                 }}
               >
                 Gustul începe cu lipia noastră proaspătă

@@ -31,7 +31,7 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
         style={{
           maxWidth: 1100,
           margin: "0 auto",
-          height: isMobile ? 62 : 80,
+          height: isMobile ? 70 : 80,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -55,8 +55,8 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
             <img
               src={logo}
               alt="Logo Natanya"
-              width={isMobile ? 46 : 68}
-              height={isMobile ? 46 : 68}
+              width={isMobile ? 40 : 68}
+              height={isMobile ? 40 : 68}
               fetchPriority="high"
               style={{ objectFit: "contain", flexShrink: 0 }}
             />
@@ -69,7 +69,7 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
                 alt="Natanya"
                 fetchPriority="high"
                 style={{
-                  height: 36,
+                  height: isMobile ? 26 : 36,
                   width: "auto",
                   objectFit: "contain",
                   display: "block",
@@ -78,11 +78,11 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
             </picture>
             <div
               style={{
-                fontSize: 12,
+                fontSize: isMobile ? 9 : 12,
                 color: C.beige,
                 letterSpacing: 0.5,
                 fontStyle: "italic",
-                display: isMobile ? "none" : "block",
+                whiteSpace: "nowrap",
               }}
             >
               Gustul începe cu lipia noastră proaspătă
