@@ -1,22 +1,12 @@
 import FadeIn from "./FadeIn";
 import { C } from "../constants";
+import { Sandwich, Drumstick, LeafyGreen, ChefHat } from "lucide-react";
 
-const CARDS_DESKTOP = [
-  [
-    "🥙",
-    "Lipie proaspătă zilnic",
-    "Proaspătă la fiecare comandă, fără excepție",
-  ],
-  ["🥩", "Carne selectată", "Furnizori locali de încredere"],
-  ["🥬", "Legume proaspete", "Selectate zilnic pentru calitate maximă"],
-  ["🫙", "Sosuri proprii", "Rețete originale Natanya"],
-];
-
-const CARDS_MOBILE = [
-  "🥙 Lipie proaspătă zilnic",
-  "🥩 Carne selectată",
-  "🥬 Legume proaspete",
-  "🫙 Sosuri proprii",
+const CARDS = [
+  { Icon: Sandwich,   titlu: "Lipie proaspătă zilnic", desc: "Proaspătă la fiecare comandă, fără excepție" },
+  { Icon: Drumstick,  titlu: "Carne selectată",        desc: "Furnizori locali de încredere" },
+  { Icon: LeafyGreen, titlu: "Legume proaspete",       desc: "Selectate zilnic pentru calitate maximă" },
+  { Icon: ChefHat,    titlu: "Sosuri proprii",         desc: "Rețete originale Natanya" },
 ];
 
 export default function AboutSection({ isMobile, onCall, pad }) {
@@ -90,18 +80,23 @@ export default function AboutSection({ isMobile, onCall, pad }) {
                 marginBottom: 24,
               }}
             >
-              {CARDS_MOBILE.map((item) => (
+              {CARDS.map(({ Icon, titlu }) => (
                 <div
-                  key={item}
+                  key={titlu}
                   className="about-card"
                   style={{
                     textAlign: "center",
                     fontSize: 13,
                     fontWeight: 600,
                     lineHeight: 1.6,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 8,
                   }}
                 >
-                  {item}
+                  <Icon size={22} color={C.gold} strokeWidth={1.5} />
+                  {titlu}
                 </div>
               ))}
             </div>
@@ -196,19 +191,11 @@ export default function AboutSection({ isMobile, onCall, pad }) {
                 gap: 14,
               }}
             >
-              {CARDS_DESKTOP.map(([emoji, titlu, desc]) => (
+              {CARDS.map(({ Icon, titlu, desc }) => (
                 <div key={titlu} className="about-card">
-                  <div style={{ fontSize: 32, marginBottom: 10 }}>{emoji}</div>
-                  <div
-                    style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}
-                  >
-                    {titlu}
-                  </div>
-                  <div
-                    style={{ fontSize: 12, color: C.muted, lineHeight: 1.6 }}
-                  >
-                    {desc}
-                  </div>
+                  <Icon size={32} color={C.gold} strokeWidth={1.5} style={{ marginBottom: 10 }} />
+                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{titlu}</div>
+                  <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.6 }}>{desc}</div>
                 </div>
               ))}
             </div>
