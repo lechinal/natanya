@@ -145,13 +145,26 @@ export default function HeroSection({ isMobile, onScrollTo }) {
               {stats.map(([v, l]) => (
                 <div key={l} style={{ textAlign: "center" }}>
                   {v === "google" ? (
-                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 22 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: 22,
+                      }}
+                    >
                       <StarRating rating={GOOGLE_RATING} size={13} />
                     </div>
                   ) : (
-                    <div style={{ fontSize: 16, fontWeight: 700, color: C.gold }}>{v}</div>
+                    <div
+                      style={{ fontSize: 16, fontWeight: 700, color: C.gold }}
+                    >
+                      {v}
+                    </div>
                   )}
-                  <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>{l}</div>
+                  <div style={{ fontSize: 11, color: C.muted, marginTop: 2 }}>
+                    {l}
+                  </div>
                 </div>
               ))}
             </div>
@@ -236,13 +249,26 @@ export default function HeroSection({ isMobile, onScrollTo }) {
                 {stats.map(([v, l]) => (
                   <div key={l} style={{ textAlign: "center" }}>
                     {v === "google" ? (
-                      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 24 }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          height: 24,
+                        }}
+                      >
                         <StarRating rating={GOOGLE_RATING} size={16} />
                       </div>
                     ) : (
-                      <div style={{ fontSize: 17, fontWeight: 700, color: C.gold }}>{v}</div>
+                      <div
+                        style={{ fontSize: 17, fontWeight: 700, color: C.gold }}
+                      >
+                        {v}
+                      </div>
                     )}
-                    <div style={{ fontSize: 12, color: C.muted, marginTop: 3 }}>{l}</div>
+                    <div style={{ fontSize: 12, color: C.muted, marginTop: 3 }}>
+                      {l}
+                    </div>
                   </div>
                 ))}
               </div>

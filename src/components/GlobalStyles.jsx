@@ -17,6 +17,10 @@ export default function GlobalStyles() {
       .nav-btn:hover { color: #D4891A; }
       .menu-card { background: #1e1000; border: 1px solid #2E1A08; border-radius: 14px; padding: 18px; transition: all 0.25s; }
       .menu-card:hover { border-color: #D4891A; background: #271500; transform: translateY(-2px); }
+      .menu-card-img-wrap { overflow: hidden; height: 180px; transition: height 0.45s ease; }
+      .menu-card:hover .menu-card-img-wrap { height: 320px; }
+      .menu-card-img-wrap img { transition: transform 0.45s ease; }
+      .menu-card:hover .menu-card-img-wrap img { transform: scale(1.03); }
       .cat-btn { background: transparent; border: 1px solid #2E1A08; color: #9A8870; padding: 8px 16px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; }
       .cat-btn.active { background: #8B1A1A; border-color: #8B1A1A; color: #F5F0E8; }
       .cat-btn:hover { border-color: #D4891A; color: #D4891A; }
