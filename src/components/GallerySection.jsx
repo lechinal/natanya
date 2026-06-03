@@ -1,13 +1,14 @@
 import FadeIn from "./FadeIn";
 import { C } from "../constants";
+import { MENU_IMAGES } from "../assets/menuImages";
 
 const GALLERY_ITEMS = [
-  { bg: "#2a0a0a", emoji: "🥙", label: "Shaorma la lipie" },
-  { bg: "#1a1500", emoji: "🍽️", label: "La farfurie" },
-  { bg: "#1a0800", emoji: "🍗", label: "Wings Box" },
-  { bg: "#200a0a", emoji: "🥙", label: "Piadina" },
-  { bg: "#180e00", emoji: "🍢", label: "Kebab" },
-  { bg: "#1a1000", emoji: "🎁", label: "Combo" },
+  { bg: "#2a0a0a", imgKey: "shorma",         label: "Shaorma la lipie" },
+  { bg: "#1a1500", imgKey: "shormaFarfurie",  label: "La farfurie" },
+  { bg: "#1a0800", imgKey: "aripioare",       label: "Wings Box" },
+  { bg: "#200a0a", imgKey: "piadina",         label: "Piadina" },
+  { bg: "#180e00", imgKey: "kebab",           label: "Kebab" },
+  { bg: "#1a1000", imgKey: "snitelLipie",     label: "Șnițel la lipie" },
 ];
 
 export default function GallerySection({ isMobile, pad }) {
@@ -45,51 +46,82 @@ export default function GallerySection({ isMobile, pad }) {
             gap: 10,
           }}
         >
-          {GALLERY_ITEMS.map((item) => (
-            <div
-              key={item.label}
-              className="gal-item"
-              style={{ background: item.bg, fontSize: isMobile ? 40 : 56 }}
-              role="img"
-              aria-label={item.label}
-            >
-              {item.emoji}
-              <div style={{ marginTop: 8, fontSize: 12, color: C.muted, fontWeight: 600 }}>
-                {item.label}
-              </div>
+          {GALLERY_ITEMS.map((item) => {
+            const img = MENU_IMAGES[item.imgKey];
+            return (
               <div
-                className="gal-label"
+                key={item.label}
+                className="gal-item"
                 style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  background: "linear-gradient(transparent,rgba(0,0,0,0.9))",
-                  padding: "20px 12px 12px",
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: C.gold,
-                  opacity: 0,
-                  transition: "opacity 0.3s",
+                  background: item.bg,
+                  padding: 10,
+                  alignItems: "stretch",
+                  justifyContent: "flex-start",
+                  flexDirection: "column",
                 }}
+                role="img"
+                aria-label={item.label}
               >
-                {item.label}
+                <div
+                  style={{
+                    flex: 1,
+                    minHeight: 0,
+                    borderRadius: 8,
+                    overflow: "hidden",
+                    position: "relative",
+                  }}
+                >
+                  <picture>
+                    <source srcSet={img.webp} type="image/webp" />
+                    <img
+                      src={img.fallback}
+                      alt={item.label}
+                      loading="lazy"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: img.position || "center center",
+                        display: "block",
+                        transition: "transform 0.4s ease",
+                      }}
+                    />
+                  </picture>
+                  <div
+                    className="gal-label"
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      background: "linear-gradient(transparent, rgba(0,0,0,0.85))",
+                      padding: "24px 10px 10px",
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: C.gold,
+                      opacity: 0,
+                      transition: "opacity 0.3s",
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                </div>
+                <div
+                  style={{
+                    fontSize: 12,
+                    color: C.muted,
+                    fontWeight: 600,
+                    textAlign: "center",
+                    paddingTop: 8,
+                    flexShrink: 0,
+                  }}
+                >
+                  {item.label}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-
-        <p
-          style={{
-            textAlign: "center",
-            color: C.muted,
-            fontSize: 13,
-            marginTop: 20,
-            fontStyle: "italic",
-          }}
-        >
-          * Pozele reale ale produselor vor fi adăugate în curând
-        </p>
       </div>
     </FadeIn>
   );
