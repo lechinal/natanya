@@ -5,7 +5,7 @@ export const GOOGLE_RATING = 4.4;
 export const MENIU = [
   {
     categorie: "SIGNATURE NATANYA",
-    emoji: "🥙",
+    // emoji: "🥙",
     items: [
       {
         nume: "Piadina",
@@ -32,7 +32,7 @@ export const MENIU = [
   },
   {
     categorie: "SHAORMA",
-    emoji: "🌯",
+    // emoji: "🌯",
     items: [
       {
         nume: "Shaorma la lipie",
@@ -45,7 +45,7 @@ export const MENIU = [
   },
   {
     categorie: "KEBAB",
-    emoji: "🍢",
+    // emoji: "🍢",
     items: [
       {
         nume: "Kebab pui",
@@ -65,7 +65,7 @@ export const MENIU = [
   },
   {
     categorie: "LA FARFURIE",
-    emoji: "🍽️",
+    //  emoji: "🍽️",
     items: [
       {
         nume: "Șnițel la farfurie",
@@ -85,7 +85,7 @@ export const MENIU = [
   },
   {
     categorie: "WINGS BOX",
-    emoji: "🍗",
+    // emoji: "🍗",
     items: [
       {
         nume: "4 aripioare",
@@ -112,7 +112,7 @@ export const MENIU = [
   },
   {
     categorie: "MENIU COPII",
-    emoji: "👶",
+    //  emoji: "👶",
     items: [
       {
         nume: "Shaorma box",
@@ -130,7 +130,7 @@ export const MENIU = [
   },
   {
     categorie: "COMBO",
-    emoji: "🎁",
+    // emoji: "🎁",
     items: [
       {
         nume: "Combo Șnițel la lipie + suc",
@@ -145,7 +145,7 @@ export const MENIU = [
   },
   {
     categorie: "RĂCORITOARE",
-    emoji: "🥤",
+    // emoji: "🥤",
     items: [
       {
         nume: "Coca-Cola / Fanta / Sprite",
@@ -169,7 +169,7 @@ export const MENIU = [
   },
   {
     categorie: "SOSURI & GARNITURI",
-    emoji: "🫙",
+    // emoji: "🫙",
     items: [
       { nume: "Sos tzatziki", desc: "40g", pret: "5 Lei", gramaj: "" },
       { nume: "Sos picant", desc: "40g", pret: "5 Lei", gramaj: "" },
