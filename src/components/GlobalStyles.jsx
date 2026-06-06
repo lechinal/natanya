@@ -35,6 +35,10 @@ export default function GlobalStyles() {
       .divider { width: 60px; height: 3px; background: linear-gradient(90deg, #8B1A1A, #D4891A); border-radius: 2px; margin: 12px auto 0; }
       @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
       .hero-img { animation: float 5s ease-in-out infinite; }
+      .footer-link { display: flex; align-items: center; color: #9A8870; font-size: 14px; font-weight: 500; text-decoration: none; background: none; border: none; cursor: pointer; padding: 5px 0; transition: color 0.3s ease; font-family: 'DM Sans', sans-serif; }
+      .footer-link::before { content: ''; display: inline-block; width: 0; height: 1px; background: #D4891A; transition: width 0.3s ease, margin-right 0.3s ease; margin-right: 0; flex-shrink: 0; }
+      .footer-link:hover { color: #D4891A; }
+      .footer-link:hover::before { width: 18px; margin-right: 8px; }
     `}</style>
   );
 }
