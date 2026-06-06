@@ -27,8 +27,17 @@ export default function Footer({ isMobile }) {
           }}
         >
           <div
-            style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}
-            onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              cursor: "pointer",
+            }}
+            onClick={() =>
+              document
+                .getElementById("home")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             role="button"
             aria-label="Mergi la pagina principală"
           >
@@ -48,7 +57,12 @@ export default function Footer({ isMobile }) {
                 <img
                   src={logoScris}
                   alt="Natanya"
-                  style={{ height: isMobile ? 26 : 36, width: "auto", objectFit: "contain", display: "block" }}
+                  style={{
+                    height: isMobile ? 26 : 36,
+                    width: "auto",
+                    objectFit: "contain",
+                    display: "block",
+                  }}
                 />
               </picture>
               <div

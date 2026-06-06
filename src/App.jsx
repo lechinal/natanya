@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import NotFound from "./components/NotFound";
 
 const AboutSection    = lazy(() => import("./components/AboutSection"));
+// const VideoBanner     = lazy(() => import("./components/VideoBanner"));
 const MenuSection     = lazy(() => import("./components/MenuSection"));
 const GallerySection  = lazy(() => import("./components/GallerySection"));
 const ContactSection  = lazy(() => import("./components/ContactSection"));
@@ -76,6 +77,7 @@ export default function App() {
       <HeroSection isMobile={isMobile} onScrollTo={scrollTo} />
       <Suspense fallback={null}>
         <AboutSection isMobile={isMobile} onCall={handleCall} pad={pad} />
+        {/* <VideoBanner /> */}
         <MenuSection isMobile={isMobile} pad={pad} />
         <GallerySection isMobile={isMobile} pad={pad} />
         <ContactSection isMobile={isMobile} pad={pad} />
