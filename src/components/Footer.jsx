@@ -4,7 +4,16 @@ import logoScris from "../assets/logo/logo-scris.png";
 import logoScrisWebp from "../assets/logo/logo-scris.webp";
 import { C } from "../constants";
 
-const SOCIAL = ["Facebook", "Instagram", "TikTok"];
+const SOCIAL = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/natanyafastfood?utm_source=qr",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@itsnatanya?_r=1&_t=ZN-96r5b2qIwKc",
+  },
+];
 
 export default function Footer({ isMobile }) {
   return (
@@ -80,15 +89,22 @@ export default function Footer({ isMobile }) {
           </div>
           <nav aria-label="Rețele sociale">
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              {SOCIAL.map((sn) => (
-                <button
-                  key={sn}
+              {SOCIAL.map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-gold"
-                  style={{ padding: "6px 14px", fontSize: 12 }}
-                  aria-label={`Natanya pe ${sn}`}
+                  style={{
+                    padding: "6px 14px",
+                    fontSize: 12,
+                    textDecoration: "none",
+                  }}
+                  aria-label={`Natanya pe ${label}`}
                 >
-                  {sn}
-                </button>
+                  {label}
+                </a>
               ))}
             </div>
           </nav>
