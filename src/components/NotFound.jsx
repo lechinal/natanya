@@ -1,5 +1,6 @@
 import logo from "../assets/logo/natanya_transparent_512.png";
 import { C } from "../constants";
+import { House } from "lucide-react";
 
 export default function NotFound({ onGoHome }) {
   return (
@@ -54,7 +55,7 @@ export default function NotFound({ onGoHome }) {
         onClick={onGoHome}
         style={{ fontSize: 16, padding: "14px 32px" }}
       >
-        Înapoi acasă 🏠
+        Înapoi acasă
       </button>
     </div>
   );

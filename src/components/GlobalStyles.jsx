@@ -26,7 +26,8 @@ export default function GlobalStyles() {
       .cat-btn:hover { border-color: #D4891A; color: #D4891A; }
       .gal-item { border-radius: 14px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.3s; position: relative; overflow: hidden; border: 1px solid #2E1A08; }
       .gal-item:hover { transform: scale(1.04); }
-      .gal-item:hover .gal-label { opacity: 1 !important; }
+      .gal-img-inner { flex: 1; min-height: 0; border-radius: 8px; overflow: hidden; width: 100%; transition: box-shadow 0.35s ease; }
+      .gal-item:hover .gal-img-inner { box-shadow: inset 0 0 0 2px #D4891A; }
       .mobile-nav-item { background: none; border: none; color: #F5F0E8; font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; cursor: pointer; padding: 15px 0; text-align: left; width: 100%; border-bottom: 1px solid #2E1A08; transition: color 0.2s; }
       .mobile-nav-item.active, .mobile-nav-item:hover { color: #D4891A; }
       .info-row { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }

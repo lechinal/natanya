@@ -62,15 +62,7 @@ export default function GallerySection({ isMobile, pad }) {
                 role="img"
                 aria-label={item.label}
               >
-                <div
-                  style={{
-                    flex: 1,
-                    minHeight: 0,
-                    borderRadius: 8,
-                    overflow: "hidden",
-                    position: "relative",
-                  }}
-                >
+                <div className="gal-img-inner">
                   <picture>
                     <source srcSet={img.webp} type="image/webp" />
                     <img
@@ -87,24 +79,6 @@ export default function GallerySection({ isMobile, pad }) {
                       }}
                     />
                   </picture>
-                  <div
-                    className="gal-label"
-                    style={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      background: "linear-gradient(transparent, rgba(0,0,0,0.85))",
-                      padding: "24px 10px 10px",
-                      fontSize: 13,
-                      fontWeight: 600,
-                      color: C.gold,
-                      opacity: 0,
-                      transition: "opacity 0.3s",
-                    }}
-                  >
-                    {item.label}
-                  </div>
                 </div>
                 <div
                   style={{

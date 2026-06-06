@@ -1,12 +1,13 @@
 import { useState } from "react";
 import FadeIn from "./FadeIn";
 import { C } from "../constants";
+import { Phone, Clock, Mail, MapPin, Send, CircleCheck } from "lucide-react";
 
 const INFO_ROWS = [
-  ["📞", "Telefon", "+40 725 680 000"],
-  ["⏰", "Program", "Luni–Duminică: 10:00 – 23:00"],
-  ["📧", "Email", "newnatanya@yahoo.com"],
-  ["📍", "Adresă", "Bd. 1 Decembrie 1918, 51008 Alba Iulia"],
+  { Icon: Phone,  label: "Telefon", val: "+40 725 680 000" },
+  { Icon: Clock,  label: "Program", val: "Luni–Duminică: 10:00 – 23:00" },
+  { Icon: Mail,   label: "Email",   val: "newnatanya@yahoo.com" },
+  { Icon: MapPin, label: "Adresă",  val: "Bd. 1 Decembrie 1918, 51008 Alba Iulia" },
 ];
 
 const FORM_FIELDS = [
@@ -83,9 +84,11 @@ export default function ContactSection({ isMobile, pad }) {
         >
           {/* Contact info + harta */}
           <address style={{ fontStyle: "normal" }}>
-            {INFO_ROWS.map(([icon, label, val]) => (
+            {INFO_ROWS.map(({ Icon, label, val }) => (
               <div key={label} className="info-row">
-                <div className="info-icon" aria-hidden="true">{icon}</div>
+                <div className="info-icon" aria-hidden="true">
+                  <Icon size={18} color={C.gold} strokeWidth={1.5} />
+                </div>
                 <div>
                   <div
                     style={{
@@ -147,7 +150,7 @@ export default function ContactSection({ isMobile, pad }) {
               role="status"
               aria-live="polite"
             >
-              <div style={{ fontSize: 56 }} aria-hidden="true">✅</div>
+              <CircleCheck size={56} color={C.gold} strokeWidth={1.5} aria-hidden="true" />
               <h3 style={{ fontSize: 20, fontWeight: 700 }}>Mesaj trimis!</h3>
               <p style={{ color: C.muted, fontSize: 14 }}>
                 Te contactăm în scurt timp.
@@ -263,7 +266,7 @@ export default function ContactSection({ isMobile, pad }) {
                   cursor: sending ? "not-allowed" : "pointer",
                 }}
               >
-                {sending ? "Se trimite..." : "Trimite mesajul 🚀"}
+                {sending ? "Se trimite..." : "Trimite mesajul"}
               </button>
             </form>
           )}

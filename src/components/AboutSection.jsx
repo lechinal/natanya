@@ -1,6 +1,6 @@
 import FadeIn from "./FadeIn";
 import { C } from "../constants";
-import { Sandwich, Drumstick, LeafyGreen, ChefHat } from "lucide-react";
+import { Sandwich, Drumstick, LeafyGreen, ChefHat, Phone } from "lucide-react";
 
 const CARDS = [
   { Icon: Sandwich,   titlu: "Lipie proaspătă zilnic", desc: "Proaspătă la fiecare comandă, fără excepție" },
@@ -106,7 +106,7 @@ export default function AboutSection({ isMobile, onCall, pad }) {
               onClick={onCall}
               aria-label="Sună la Natanya"
             >
-              📞 +40 725 680 000
+              +40 725 680 000
             </button>
           </div>
         ) : (
@@ -181,7 +181,7 @@ export default function AboutSection({ isMobile, onCall, pad }) {
                 onClick={onCall}
                 aria-label="Sună la Natanya"
               >
-                📞 +40 725 680 000
+                +40 725 680 000
               </button>
             </div>
             <div

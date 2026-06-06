@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Phone } from "lucide-react";
 import logo from "../assets/logo/natanya_transparent_512.png";
 import logoWebp from "../assets/logo/natanya_transparent_512.webp";
 import logoScris from "../assets/logo/logo-scris.png";
@@ -109,7 +110,7 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
               onClick={onCall}
               aria-label="Sună la Natanya"
             >
-              📞 Sună acum
+              Sună acum
             </button>
           </div>
         )}
@@ -179,7 +180,7 @@ export default function Navbar({ active, onScrollTo, onCall, isMobile }) {
             onClick={onCall}
             aria-label="Sună la Natanya"
           >
-            📞 +40 725 680 000
+            +40 725 680 000
           </button>
         </div>
       )}

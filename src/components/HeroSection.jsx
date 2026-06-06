@@ -2,6 +2,7 @@ import shaormaImg from "../assets/img/shaorma-img-noBG.png";
 import shaormaWebp from "../assets/img/shaorma-img-noBG.webp";
 import { C, GOOGLE_RATING } from "../constants";
 import StarRating from "./StarRating";
+import { UtensilsCrossed } from "lucide-react";
 
 export default function HeroSection({ isMobile, onScrollTo }) {
   const stats = isMobile
@@ -130,7 +131,7 @@ export default function HeroSection({ isMobile, onScrollTo }) {
                 style={{ fontSize: 15, padding: "14px 28px" }}
                 aria-label="Vezi meniul Natanya"
               >
-                Vezi meniul 🌯
+                Vezi meniul
               </button>
               <button
                 className="btn-gold"
@@ -235,7 +236,7 @@ export default function HeroSection({ isMobile, onScrollTo }) {
                   style={{ fontSize: 16, padding: "14px 30px" }}
                   aria-label="Vezi meniul Natanya"
                 >
-                  Vezi meniul 🌯
+                  Vezi meniul
                 </button>
                 <button
                   className="btn-gold"

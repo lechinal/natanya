@@ -1,4 +1,10 @@
-import { FaInstagram, FaTiktok } from "react-icons/fa6";
+import {
+  FaInstagram,
+  FaTiktok,
+  FaPhone,
+  FaClock,
+  FaLocationDot,
+} from "react-icons/fa6";
 import logo from "../assets/logo/natanya_transparent_512.png";
 import logoWebp from "../assets/logo/natanya_transparent_512.webp";
 import logoScris from "../assets/logo/logo-scris.png";
@@ -28,7 +34,9 @@ const SECTION_MAP = {
 
 export default function Footer({ isMobile }) {
   const scrollTo = (section) => {
-    document.getElementById(SECTION_MAP[section])?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById(SECTION_MAP[section])
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -40,7 +48,6 @@ export default function Footer({ isMobile }) {
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-
         {/* Grid principal */}
         <div
           style={{
@@ -53,8 +60,18 @@ export default function Footer({ isMobile }) {
           {/* Col 1 — Logo + motto */}
           <div>
             <div
-              style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer", marginBottom: 16 }}
-              onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                cursor: "pointer",
+                marginBottom: 16,
+              }}
+              onClick={() =>
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               role="button"
               aria-label="Mergi la pagina principală"
             >
@@ -74,18 +91,27 @@ export default function Footer({ isMobile }) {
                   <img
                     src={logoScris}
                     alt="Natanya"
-                    style={{ height: isMobile ? 26 : 36, width: "auto", objectFit: "contain", display: "block" }}
+                    style={{
+                      height: isMobile ? 26 : 36,
+                      width: "auto",
+                      objectFit: "contain",
+                      display: "block",
+                    }}
                   />
                 </picture>
-                <div style={{ fontSize: isMobile ? 9 : 12, color: C.beige, letterSpacing: 0.5, fontStyle: "italic", whiteSpace: "nowrap" }}>
+                <div
+                  style={{
+                    fontSize: isMobile ? 9 : 12,
+                    color: C.beige,
+                    letterSpacing: 0.5,
+                    fontStyle: "italic",
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   Gustul începe cu lipia noastră proaspătă
                 </div>
               </div>
             </div>
-            <p style={{ color: C.muted, fontSize: 13, lineHeight: 1.8, maxWidth: 300 }}>
-              Shaorma, piadine și kebab preparate proaspăt zilnic în Alba Iulia.
-              Lipia noastră e secretul care face diferența.
-            </p>
           </div>
 
           {/* Col 2 — Linkuri rapide */}
@@ -158,15 +184,29 @@ export default function Footer({ isMobile }) {
             >
               Contact
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                ["📞", "+40 725 680 000"],
-                ["⏰", "Luni–Duminică: 10:00–23:00"],
-                ["📍", "Bd. 1 Decembrie 1918, Alba Iulia"],
-              ].map(([icon, text]) => (
-                <div key={text} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-                  <span style={{ fontSize: 13, flexShrink: 0 }}>{icon}</span>
-                  <span style={{ color: C.muted, fontSize: 13, lineHeight: 1.6 }}>{text}</span>
+                { Icon: FaPhone, text: "+40 725 680 000" },
+                { Icon: FaClock, text: "Luni–Duminică: 10:00–23:00" },
+                {
+                  Icon: FaLocationDot,
+                  text: "Bd. 1 Decembrie 1918, Alba Iulia",
+                },
+              ].map(({ Icon, text }) => (
+                <div
+                  key={text}
+                  style={{ display: "flex", gap: 10, alignItems: "flex-start" }}
+                >
+                  <Icon
+                    size={14}
+                    color={C.gold}
+                    style={{ marginTop: 2, flexShrink: 0 }}
+                  />
+                  <span
+                    style={{ color: C.muted, fontSize: 13, lineHeight: 1.6 }}
+                  >
+                    {text}
+                  </span>
                 </div>
               ))}
             </div>
